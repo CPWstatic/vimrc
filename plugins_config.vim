@@ -44,7 +44,7 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
 
 " Quickly find and open a file in the current working directory
-"let g:ctrlp_map = '<C-f>'
+let g:ctrlp_map = '<C-j>'
 map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
@@ -158,12 +158,12 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'dense-analysis/ale'
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
-\}
+" Bundle 'dense-analysis/ale'
+" let g:ale_linters = {
+" \   'javascript': ['eslint'],
+" \   'python': ['flake8'],
+" \   'go': ['go', 'golint', 'errcheck']
+" \}
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
@@ -225,3 +225,13 @@ let g:clang_format#detect_style_file = 1
 
 autocmd FileType c,cpp ClangFormatAutoEnable
 autocmd FileType c,cpp set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => auto pairs () []
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'jiangmiao/auto-pairs'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => comment util
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'tpope/vim-commentary'
