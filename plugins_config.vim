@@ -1,3 +1,5 @@
+let s:dotvim = fnamemodify(globpath(&rtp, 'vimrc'), ':p:h')
+
 " VUNDLE {{{
 let s:bundle_path=s:dotvim."/bundle/"
 execute "set rtp+=".s:bundle_path."vundle/"
@@ -62,7 +64,10 @@ let g:user_zen_mode='a'
 
 """"""""""""""""""""""""""""""
 " => snipMate (beside <TAB> support <CTRL-j>)
+" snipmate need vim-addon-mw-utils and tlib
 """"""""""""""""""""""""""""""
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
 snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>

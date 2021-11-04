@@ -39,7 +39,6 @@ fi
 if [ ! -d "bundle" ]; then
     echo "Now, we will create a separate directory to store the bundles Vim will use."
     mkdir bundle
-    mkdir -p tmp/backup tmp/swap tmp/undo
 fi
 
 if [ ! -d "bundle/vundle" ]; then
