@@ -44,7 +44,7 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 0
 
 " Quickly find and open a file in the current working directory
-let g:ctrlp_map = '<C-j>'
+let g:ctrlp_map = '<C-p>'
 map <leader>j :CtrlP<cr>
 
 " Quickly find and open a buffer
@@ -235,3 +235,19 @@ Bundle 'jiangmiao/auto-pairs'
 " => comment util
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'tpope/vim-commentary'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ACK, a search tool
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'mileszs/ack.vim'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => switch between cpp <-> h
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'vim-scripts/a.vim'
+nnoremap <leader>a :A<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => completer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'ycm-core/YouCompleteMe'

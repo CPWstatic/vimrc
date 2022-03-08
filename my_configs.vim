@@ -84,8 +84,15 @@ endfunction
 
 " Toggle terminal - bottom
 nnoremap <silent> <F9> :call <SID>ToggleTerminal('J', 6)<CR>
+tnoremap <silent> <F9> <C-\><C-n>:call <SID>ToggleTerminal('J', 6)<CR>
 
 " Toggle terminal - right
-nnoremap <silent> <F10> :call <SID>ToggleTerminal('L', -1)<CR>
+nnoremap <silent> <F10> :call <SID>ToggleTerminal('L', -1)<CR>i
+tnoremap <silent> <F10> <C-\><C-n>:call <SID>ToggleTerminal('L', -1)<CR>
 
+" Turn to visual mode
+tnoremap <Esc><Esc> <C-\><C-n>
 " }}}
+
+" Reload vimr configuration file
+nnoremap <Leader>vr :source $MYVIMRC<CR>
