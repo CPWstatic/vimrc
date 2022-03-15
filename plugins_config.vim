@@ -251,3 +251,12 @@ nnoremap <leader>a :A<CR>
 " => completer
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'ycm-core/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0                     " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
+let g:ycm_complete_in_comments=1                   " 补全功能在注释中同样有效
+nnoremap <C-c>g :YcmCompleter GoTo<CR>
+nnoremap <C-c>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-c>t :YcmCompleter GetType<CR>
+nnoremap <C-c>d :YcmCompleter GetDoc<CR>
+nnoremap <C-c>fi :YcmCompleter FixIt<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
