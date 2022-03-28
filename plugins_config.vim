@@ -1,4 +1,4 @@
-let s:dotvim = fnamemodify(globpath(&rtp, 'vimrc'), ':p:h')
+let s:dotvim = fnamemodify(globpath(&rtp, 'plugins_config.vim'), ':p:h')
 
 " VUNDLE {{{
 let s:bundle_path=s:dotvim."/bundle/"
@@ -254,6 +254,8 @@ Bundle 'ycm-core/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0                     " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
 let g:ycm_complete_in_comments=1                   " 补全功能在注释中同样有效
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <C-c>g :YcmCompleter GoTo<CR>
 nnoremap <C-c>gd :YcmCompleter GoToDeclaration<CR>
 nnoremap <C-c>t :YcmCompleter GetType<CR>

@@ -1,4 +1,4 @@
-let s:dotvim = fnamemodify(globpath(&rtp, 'vimrc'), ':p:h')
+let s:dotvim = fnamemodify(globpath(&rtp, 'basic.vim'), ':p:h')
 
 " Load vimrcs {{{
 let s:basic = expand(s:dotvim . '/basic.vim')
