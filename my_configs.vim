@@ -16,7 +16,7 @@ nnoremap <leader>z zMzvzz
 
 " }}}
 
-nmap <tab> :NERDTreeToggle<cr>
+nmap <F1> :NERDTreeToggle<cr>
 
 set number
 if exists('+relativenumber')
@@ -30,7 +30,7 @@ function! PutTermPanel(buf, side, size) abort
   if a:buf == 0
     term
   else
-    execute "sp" bufname(a:buf)
+    execute "sb" bufnr(a:buf)
   endif
   " default side if wrong argument
   if stridx("hjklHJKL", a:side) == -1

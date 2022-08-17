@@ -262,3 +262,16 @@ nnoremap <C-c>t :YcmCompleter GetType<CR>
 nnoremap <C-c>d :YcmCompleter GetDoc<CR>
 nnoremap <C-c>fi :YcmCompleter FixIt<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Go syntax highlight, compile, debug, execute...
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'fatih/vim-go'
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_assignments = 1
