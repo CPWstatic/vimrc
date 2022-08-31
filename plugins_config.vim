@@ -22,10 +22,10 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
-Bundle 'vim-scripts/mru.vim'
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
-
+"Bundle 'vim-scripts/mru.vim'
+"let MRU_Max_Entries = 400
+"map <leader>f :MRU<CR>
+"
 
 """"""""""""""""""""""""""""""
 " => YankStack
@@ -33,6 +33,7 @@ map <leader>f :MRU<CR>
 Bundle 'maxbrunsfeld/vim-yankstack'
 let g:yankstack_yank_keys = ['y', 'd']
 
+" cycle BACKWARD or FORWARD through your history of yanks
 nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
@@ -41,14 +42,14 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 " => CTRL-P
 """"""""""""""""""""""""""""""
 Bundle 'kien/ctrlp.vim'
-let g:ctrlp_working_path_mode = 0
+" ancestor that contains: .git .hg .svn .bzr
+" if none of these found, the current directory will be applied
+let g:ctrlp_working_path_mode = 'ra'
 
+let g:ctrlp_map = 0
 " Quickly find and open a file in the current working directory
-let g:ctrlp_map = '<C-p>'
-map <leader>j :CtrlP<cr>
-
-" Quickly find and open a buffer
-map <leader>b :CtrlPBuffer<cr>
+" <c-f> switch between mode: files, buffer, mru
+map <leader>f :CtrlP<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -252,22 +253,26 @@ nnoremap <leader>a :A<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'ycm-core/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf=0                     " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-let g:ycm_complete_in_comments=1                   " 补全功能在注释中同样有效
+let g:ycm_confirm_extra_conf=0                     " allows to load.ycm_extra_conf
+let g:ycm_complete_in_comments=1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <C-c>g :YcmCompleter GoTo<CR>
 nnoremap <C-c>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-c>gc :YcmCompleter GoToCallers<CR>
 nnoremap <C-c>t :YcmCompleter GetType<CR>
 nnoremap <C-c>d :YcmCompleter GetDoc<CR>
 nnoremap <C-c>fi :YcmCompleter FixIt<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
+" using popup preview window
+set completeopt=menu,popup
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Go syntax highlight, compile, debug, execute...
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'fatih/vim-go'
+"Bundle 'fatih/vim-go'
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_parameters = 1
